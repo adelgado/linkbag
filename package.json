@@ -1,27 +1,15 @@
 {
-  "name": "react-boilerplate",
+  "name": "linkbag",
   "version": "0.0.1",
-  "description": "An Isomorphic React starter project, configured for ES6 React, LESS, Node, Express",
+  "description": "A bag of links",
   "scripts": {
     "start": "node server.js",
     "prestart": "NODE_ENV=production webpack -p",
     "build": "NODE_ENV=production webpack -p",
     "watch": "webpack-dev-server --hot --progress --colors"
   },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:shahbhavir/react-boilerplate.git"
-  },
-  "keywords": [
-    "webpack",
-    "react",
-    "ecmascript6",
-    "react-hot-loader",
-    "less"
-  ],
-  "author": "Bhavir Shah <shahbhavir@gmail.com>",
+  "author": "Alessandro Delgado <adelgado1313@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/shahbhavir/react-boilerplate",
   "devDependencies": {
     "babel": "^5.8.3",
     "babel-core": "^5.8.3",

@@ -1,7 +1,6 @@
-# react-boilerplate
+# linkbag
 
-* An Isomorphic React starter project, configured for ES6 React, LESS, Node, Express
-* Uses Webpack. Supports React hot reload.
+* A bag of links
 
 
 ### Install
