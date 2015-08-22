@@ -12,7 +12,10 @@ class Home extends React.Component {
 
     render() {
         return (
-            <div></div>
+            <section className="form">
+                <input id="link" />
+                <button>Adicionar</button>
+            </section>
         );
     }
 }

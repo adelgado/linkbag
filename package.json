@@ -43,6 +43,7 @@
     "bootstrap": "^3.3.5",
     "ejs": "^2.3.3",
     "express": "^4.13.1",
+    "normalize.css": "^3.0.3",
     "react": "^0.13.3"
   },
   "main": "server.js"
