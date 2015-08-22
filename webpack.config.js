@@ -30,8 +30,8 @@ function getStatesFile() {
 
 module.exports = {
     entry: {
-        'styles': getEntrySources(['./app/less/styles.less']),
         'app': getEntrySources(['./app/App.jsx']),
+        'styles': getEntrySources(['./app/styles/index.styl']),
     },
     output: {
         filename: '[name].js',
@@ -41,12 +41,12 @@ module.exports = {
     module: {
         loaders: [
             { test: /\.jsx$/, loaders: ['react-hot-loader', 'babel-loader'], exclude: /node_modules/ },
-            { test: /\.less$/, loader: ExtractTextPlugin.extract('css!less') }
+            { test: /\.styl$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader!stylus-loader') }
         ]
     },
     resolve: {
         modulesDirectories: ['jsx', 'node_modules'],
-        extensions: ['', '.js', '.jsx', '.less'],
+        extensions: ['', '.js', '.jsx', '.styl'],
     },
     plugins: [
         new webpack.NoErrorsPlugin(),
