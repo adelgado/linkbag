@@ -9,7 +9,7 @@ var express = require('express'),
     React = require('react'),
     ReactAddons = require('react/addons');
 
-var ReactApp = ReactAddons.createFactory(require('./app/Home.jsx'));
+var ReactApp = ReactAddons.createFactory(require('./app/home.jsx'));
 
 // Include static assets. Not advised for production
 app.use(express.static(path.join(__dirname, 'public/')));

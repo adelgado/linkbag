@@ -30,8 +30,8 @@ function getStatesFile() {
 
 module.exports = {
     entry: {
-        'app': getEntrySources(['./app/App.jsx']),
         'styles': getEntrySources(['./app/styles/index.styl']),
+        'app': getEntrySources(['./app/scripts/app.jsx']),
     },
     output: {
         filename: '[name].js',
