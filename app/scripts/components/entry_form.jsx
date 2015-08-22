@@ -6,9 +6,14 @@ class EntryForm extends React.Component {
 
     constructor(props) {
         super(props);
+        this.state = { value: '' };
     }
 
-    handleAddButton() {
+    handleInputChange(event) {
+        this.setState({value: event.target.value});
+    }
+
+    handleAddButtonClick() {
         // Log the initial state
         console.log(store.getState());
 
@@ -18,7 +23,7 @@ class EntryForm extends React.Component {
         );
 
         // Dispatch some actions
-        store.dispatch(addCard('http://google.com'));
+        store.dispatch(addCard(this.state.value));
 
         // Stop listening to state updates
         unsubscribe();
@@ -27,8 +32,8 @@ class EntryForm extends React.Component {
     render() {
         return (
             <section className="form">
-                <input id="link" />
-                <button onClick={this.handleAddButton}>Add</button>
+                <input type="text" id="link" onChange={this.handleInputChange.bind(this)} />
+                <button onClick={this.handleAddButtonClick.bind(this)}>Add</button>
             </section>
         );
     }
