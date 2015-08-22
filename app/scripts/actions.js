@@ -9,5 +9,5 @@ export const ADD_CARD = 'ADD_CARD';
  */
 
 export function addCard(url) {
-  return { type: ADD_CARD, url };
+	return { type: ADD_CARD, url };
 }
