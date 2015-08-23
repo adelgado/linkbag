@@ -1,17 +1,26 @@
 import React from 'react';
 import EntryForm from './entry_form'
+import { connect }            from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { addCard }            from '../actions'
+import CardList               from './card_list'
 
 class Home extends React.Component {
 
-	constructor(props) {
-		super(props);
+	addEntry = (url) => {
+		this.props.dispatch(addCard(url))
 	}
 
 	render() {
 		return (
-			<EntryForm />
-		);
+			<div>
+				<EntryForm onEntry={this.addEntry} />
+				<CardList cards={this.props.cards} />
+			</div>
+		)
 	}
+
 }
 
-export default Home;
+// Wrap the component to inject dispatch and state into it
+export default connect(state => state)(Home)
