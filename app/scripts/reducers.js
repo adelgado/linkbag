@@ -1,18 +1,13 @@
 import { ADD_CARD } from './actions'
+import Immutable from 'immutable'
 
-const initialState = {
-	cards: []
-}
 
-function main(state = initialState, action) {
+function main(state, action) {
 	switch (action.type) {
 		case ADD_CARD:
-			return {
-				...state,
-				cards: [...state.cards, {
-					url: action.url
-				}]
-			}
+			return state.update('cards', (cards) => {
+				return cards.push(new Immutable.Map({url: action.url}))
+			})
 		default:
 			return state
 	}

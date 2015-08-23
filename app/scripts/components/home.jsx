@@ -23,4 +23,4 @@ class Home extends React.Component {
 }
 
 // Wrap the component to inject dispatch and state into it
-export default connect(state => state)(Home)
+export default connect(state => state.toJS())(Home)
