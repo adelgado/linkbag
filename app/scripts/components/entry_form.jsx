@@ -11,8 +11,8 @@ class EntryForm extends React.Component {
 
 	render() {
 		return (
-			<section className="form">
-				<input type="text" id="link" ref="input" />
+			<section className="entry-form">
+				<input type="text" ref="input" />
 				<button onClick={this.handleAddButtonClick}>Add</button>
 			</section>
 		)

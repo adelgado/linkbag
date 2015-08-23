@@ -1,37 +1,6 @@
 @import '../../node_modules/normalize.css/normalize.css'
 
-*
-	background-color grey
-
-$default-font-size = 16px
-$unit = $default-font-size
-
-$body-width            = 50 * $unit
-$insertion-form-height = 4 * $unit
-$search-button-width   = 15 * $unit
-$top-margin-height     = 4 * $unit
-
-body
-	font-family Avenir, "Century Gothic", sans-serif
-	width $body-width
-	margin-top	$top-margin-height
-	margin-left auto
-	margin-right auto
-
-button
-	border none
-	background-color green
-	color white
-	height $insertion-form-height
-	width 10 * $unit
-
-input
-	width 39 * $unit
-	height $insertion-form-height
-	padding-left $unit
-	margin-right $unit
-
-input,
-button
-	box-sizing: border-box
-	display: inline-block
+@import './home'
+@import './entry_form'
+@import './card_list'
+@import './card'
