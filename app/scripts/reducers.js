@@ -1,4 +1,3 @@
-import _ from 'lodash';
 
 import { ADD_CARD} from './actions';
 
@@ -8,13 +7,13 @@ const initialState = {
 
 function main(state = initialState, action) {
 	switch (action.type) {
-		case ADD_CARD: {
-			return _.assign(state, {
+		case ADD_CARD:
+			return {
+				...state,
 				cards: [...state.cards, {
 					url: action.url
 				}]
-			})
-		}
+			}
 		default:
 			return state;
 	}
