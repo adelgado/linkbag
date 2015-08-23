@@ -2,7 +2,7 @@ import React from 'react'
 
 class EntryForm extends React.Component {
 
-	handleAddButtonClick() {
+	handleAddButtonClick = () => {
 		const node = React.findDOMNode(this.refs.input)
 		const text = node.value.trim()
 		this.props.onEntry(text)
@@ -13,7 +13,7 @@ class EntryForm extends React.Component {
 		return (
 			<section className="form">
 				<input type="text" id="link" ref="input" />
-				<button onClick={this.handleAddButtonClick.bind(this)}>Add</button>
+				<button onClick={this.handleAddButtonClick}>Add</button>
 			</section>
 		)
 	}
