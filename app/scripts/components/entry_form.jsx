@@ -15,8 +15,8 @@ class EntryForm extends React.Component {
 				<input type="text" id="link" ref="input" />
 				<button onClick={this.handleAddButtonClick.bind(this)}>Add</button>
 			</section>
-		);
+		)
 	}
 }
 
-export default EntryForm;
+export default EntryForm

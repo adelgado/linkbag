@@ -1,7 +1,7 @@
-var React = require('react');
-var Home = require('./components/home');
+import React        from 'react'
 import { Provider } from 'react-redux'
 import store        from './store'
+import Home         from './components/home'
 
 React.render(
 	// The child must be wrapped in a function

@@ -1,9 +1,8 @@
-
-import { ADD_CARD} from './actions';
+import { ADD_CARD } from './actions'
 
 const initialState = {
 	cards: []
-};
+}
 
 function main(state = initialState, action) {
 	switch (action.type) {
@@ -15,7 +14,7 @@ function main(state = initialState, action) {
 				}]
 			}
 		default:
-			return state;
+			return state
 	}
 }
 

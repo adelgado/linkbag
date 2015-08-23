@@ -1,8 +1,8 @@
-import React from 'react';
-import EntryForm from './entry_form'
+import React                  from 'react'
 import { connect }            from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { addCard }            from '../actions'
+import EntryForm              from './entry_form'
 import CardList               from './card_list'
 
 class Home extends React.Component {
