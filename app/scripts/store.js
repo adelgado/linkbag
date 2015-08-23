@@ -1,6 +1,9 @@
 import { createStore } from 'redux';
 import main from './reducers';
 
-let store = createStore(main);
+const initialState = {
+	cards: []
+}
 
 export default store;
+let store = createStore(main, initialState)
