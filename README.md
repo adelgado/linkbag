@@ -26,7 +26,7 @@
 
 
 ### Notes
-* For producation, go to http://localhost:3000/
+* For production, go to http://localhost:3000/
 * For development, go to http://localhost:8080/
 
 ### License
