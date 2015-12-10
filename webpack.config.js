@@ -40,6 +40,7 @@ module.exports = {
     },
     module: {
         preLoaders: [
+            { test: /\.styl$/, loader: 'stylint-loader', include: './app/styles/' },
             // we are using `eslint-loader` explicitly since
             // we have ESLint module installed. This way we
             // can be certain that it uses the right loader
@@ -49,7 +50,7 @@ module.exports = {
         loaders: [
             { test: /\.jsx$/,  loaders: ['react-hot-loader', 'babel-loader'], exclude: /node_modules/ },
             { test: /\.js$/,   loaders: ['babel-loader'], exclude: /node_modules/ },
-            { test: /\.styl$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader!stylus-loader') }
+            { test: /\.styl$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader!stylus-loader!stylint-loader') }
         ]
     },
     resolve: {
