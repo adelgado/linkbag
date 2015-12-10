@@ -6,9 +6,11 @@ import CardList    from './card_list'
 
 class Home extends React.Component {
 
-	addEntry = (url) => {
+	addEntry = (url) =>
 		this.props.dispatch(addCard(url))
-	}
+
+	removeEntry = (card) =>
+		this.props.dispatch(removeCard(card))
 
 	render() {
 		return (

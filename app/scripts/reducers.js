@@ -1,14 +1,13 @@
 import Immutable from 'immutable'
 
-import { ADD_CARD, RECEIVE_CARD, FETCH_STATUS } from './actions'
+import { ADD_CARD
+       , RECEIVE_CARD
+       , FETCH_STATUS
+       } from './actions'
 
 const initialState = Immutable.Map({
 	cards: Immutable.List()
 })
-
-let reducers = {
-	[ADD_CARD] : addCardReducer
-}
 
 function addCardReducer(state, action) {
 	return state.update('cards', (cards) =>
@@ -19,7 +18,7 @@ function addCardReducer(state, action) {
 	)
 }
 
-function receiveCardReducer(state, { url, html } = action) {
+function receiveCardReducer(state, { url, html }) {
 	let cards = state.get('cards')
 	return state.update('cards', () => cards.update(
 		cards.findIndex(
@@ -33,7 +32,7 @@ function receiveCardReducer(state, { url, html } = action) {
 	)
 }
 
-function main(state = initialState, action) {
+export default function main(state = initialState, action) {
 	switch (action.type) {
 		case ADD_CARD:
 			return addCardReducer(state, action)
@@ -43,5 +42,3 @@ function main(state = initialState, action) {
 			return state
 	}
 }
-
-export default main
