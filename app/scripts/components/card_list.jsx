@@ -5,12 +5,12 @@ class CardList extends React.Component {
 
 	render() {
 		return (
-			<ul>
-				{this.props.cards.map(card => {
-					return <li>
+			<ul className="card-list">
+				{this.props.cards.map((card, i) =>
+					<li className="card-list__item" key={i}>
 						<Card {...card} />
 					</li>
-				})}
+				)}
 			</ul>
 		)
 	}

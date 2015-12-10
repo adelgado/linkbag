@@ -63,5 +63,8 @@ module.exports = {
         new ExtractTextPlugin("[name].css", { allChunks: true }),
         new BundleTracker({filename: getStatesFile()}),
     ],
-    devtool: 'source-map'
+    devtool: 'source-map',
+    devServer: {
+        headers: { "Access-Control-Allow-Origin": "*" }
+    }
 };

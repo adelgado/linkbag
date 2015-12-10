@@ -2,40 +2,34 @@
 require("babel/register");
 
 var express = require('express'),
-    path = require('path'),
-    app = express(),
-    port = 3000,
-    bodyParser = require('body-parser'),
-    React = require('react'),
-    ReactAddons = require('react/addons');
+	 cors    = require('cors'),
+	 path = require('path'),
+	 app = express(),
+	 port = 3000,
+	 bodyParser = require('body-parser'),
+	 React = require('react'),
+	 ReactAddons = require('react/addons');
+	 store = require('./app/scripts/store.js')
 
-var ReactApp = ReactAddons.createFactory(require('./app/home.jsx'));
+var ReactApp = ReactAddons.createFactory(require('./app/scripts/components/home.jsx'));
 
 // Include static assets. Not advised for production
 app.use(express.static(path.join(__dirname, 'public/')));
+
+// Access-Control-Allow-Origin: *
+app.use(cors())
+
 // Set view path
 app.set('views', path.join(__dirname, 'views'));
 // set up ejs for templating. You can use whatever
 app.set('view engine', 'ejs');
 
-// Set up Routes for the application
-app.get('/', function(req, res){
-    // React.renderToString takes your component
-    // and generates the markup
-    var props = {
-        reactOutput: ReactAddons.renderToString(ReactApp({})),
-        isBot: false
-    };
-
-    var useragent = req.headers['user-agent'] && req.headers['user-agent'].toLowerCase();
-
-    if (/googlebot|baiduspider|gurujibot|yandexbot|slurp|msnbot|bingbot|facebookexternalhit|linkedinbot|twitterbot|slackbot/i.test(useragent)) {
-        // check request made by bot ?
-        props.isBot = true;
-    }
-
-    res.render('index.ejs', props);
-});
+app.get('/', function(req, res) {
+	 res.append('X-Yo', 'qualeh?')
+	 res.render('index.ejs', {
+		  reactOutput: ReactAddons.renderToString(ReactApp({ store })),
+	 })
+})
 
 //Route not found -- Set 404
 app.use(function(req, res, next) {
