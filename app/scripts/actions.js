@@ -48,7 +48,7 @@ export function addCard(url) {
 		setTimeout(function () {
 			let cardHtml = '<html><head><title>Hey</title></head><body><h1>hello</h1></body></html>'
 			dispatch(receiveCard(url, cardHtml))
-		}, 1500)
+		}, 200)
 		return null
 	}
 }
