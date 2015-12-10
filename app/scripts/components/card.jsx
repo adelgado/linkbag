@@ -1,7 +1,7 @@
 import React from 'react'
 import { FETCH_STATUS } from '../actions'
 
-class Card extends React.Component {
+export default class Card extends React.Component {
 
 	isFetching() {
 		return this.props.fetchStatus == FETCH_STATUS.FETCHING
@@ -16,12 +16,12 @@ class Card extends React.Component {
 					<a href={this.props.url}>{this.props.title}</a>
 					<p>{this.props.description}</p>
 					<p>{this.props.url}</p>
-					<button onClick={() => this.props.onRemove(this.props.url)}>Remove</button>
+					<button onClick={() => this.props.onRemove(this.props.url)}>
+						Remove
+					</button>
 				</div>
 			)
 		}
 	}
 
 }
-
-export default Card
