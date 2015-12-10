@@ -3,6 +3,7 @@ import Immutable from 'immutable'
 import { ADD_CARD
        , RECEIVE_CARD
        , FETCH_STATUS
+       , REMOVE_CARD
        } from './actions'
 
 const initialState = Immutable.Map({
@@ -32,12 +33,22 @@ function receiveCardReducer(state, { url, html }) {
 	)
 }
 
+function removeCardReducer(state, { url }) {
+	debugger
+	let cards = state.get('cards')
+	return state.update('cards', () => cards.delete(
+		cards.findIndex((card) => card.get('url') === url),
+	))
+}
+
 export default function main(state = initialState, action) {
 	switch (action.type) {
 		case ADD_CARD:
 			return addCardReducer(state, action)
 		case RECEIVE_CARD:
 			return receiveCardReducer(state, action)
+		case REMOVE_CARD:
+			return removeCardReducer(state, action)
 		default:
 			return state
 	}

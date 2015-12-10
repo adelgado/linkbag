@@ -3,6 +3,7 @@ import Superagent from 'superagent'
 export const ADD_CARD     = 'ADD_CARD'
 export const FECTH_CARD   = 'FECTH_CARD'
 export const RECEIVE_CARD = 'RECEIVE_CARD'
+export const REMOVE_CARD  = 'REMOVE_CARD'
 
 export const FETCH_STATUS = {
 	FETCHING : 'FETCHING',
@@ -58,5 +59,12 @@ export function receiveCard(url, html) {
 		type: RECEIVE_CARD,
 		fetchStatus: FETCH_STATUS.FETCHED,
 		url, html
+	}
+}
+
+export function removeCard(url) {
+	return {
+		type: REMOVE_CARD,
+		url
 	}
 }

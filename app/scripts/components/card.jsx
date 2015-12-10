@@ -16,7 +16,7 @@ class Card extends React.Component {
 					<a href={this.props.url}>{this.props.title}</a>
 					<p>{this.props.description}</p>
 					<p>{this.props.url}</p>
-					<button>Remove</button>
+					<button onClick={() => this.props.onRemove(this.props.url)}>Remove</button>
 				</div>
 			)
 		}

@@ -1,22 +1,24 @@
 import React       from 'react'
 import { connect } from 'react-redux'
-import { addCard } from '../actions'
+import { addCard
+       , removeCard
+       } from '../actions'
 import EntryForm   from './entry_form'
 import CardList    from './card_list'
 
 class Home extends React.Component {
 
-	addEntry = (url) =>
+	handleAddEntry = (url) =>
 		this.props.dispatch(addCard(url))
 
-	removeEntry = (card) =>
-		this.props.dispatch(removeCard(card))
+	handleRemoveCard = (url) =>
+		this.props.dispatch(removeCard(url))
 
 	render() {
 		return (
 			<div>
-				<EntryForm onEntry={this.addEntry} />
-				<CardList cards={this.props.cards} />
+				<EntryForm onEntry={this.handleAddEntry} />
+				<CardList cards={this.props.cards} onRemove={this.handleRemoveCard} />
 			</div>
 		)
 	}
