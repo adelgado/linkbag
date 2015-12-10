@@ -3,31 +3,27 @@
 * A bag of links
 
 
-### Install
+## Install
 ```sh
   npm install
 ```
 
-### Usage
-###### Production
+## Usage
+### Production
 ```sh
   npm start
 ```
 
-###### Development
+### Development
 ```sh
   npm run watch
 ```
 
-###### Build
+### Build
 ```sh
   npm run build
 ```
 
 
-### Notes
-* For production, go to http://localhost:3000/
-* For development, go to http://localhost:8080/
-
-### License
+## License
 MIT
