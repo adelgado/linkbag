@@ -1,9 +1,10 @@
-import React from 'react'
+import React                 from 'react'
+import ReactDOM              from 'react-dom'
 
 export default class EntryForm extends React.Component {
 
 	handleAddButtonClick = () => {
-		const node = React.findDOMNode(this.refs.input)
+		const node = ReactDOM.findDOMNode(this.refs.input)
 		const text = node.value.trim()
 		this.props.onEntry(text)
 		node.value = ''
