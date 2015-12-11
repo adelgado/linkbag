@@ -18,7 +18,10 @@ class Home extends React.Component {
 		return (
 			<div>
 				<EntryForm onEntry={this.handleAddEntry} />
-				<CardList cards={this.props.cards} onRemove={this.handleRemoveCard} />
+				<CardList
+					cards={this.props.cards}
+					onRemove={this.handleRemoveCard}
+				/>
 			</div>
 		)
 	}
