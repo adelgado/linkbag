@@ -1,6 +1,6 @@
 import React from 'react'
 
-class EntryForm extends React.Component {
+export default class EntryForm extends React.Component {
 
 	handleAddButtonClick = () => {
 		const node = React.findDOMNode(this.refs.input)
@@ -18,5 +18,3 @@ class EntryForm extends React.Component {
 		)
 	}
 }
-
-export default EntryForm
