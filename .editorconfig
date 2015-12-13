@@ -7,17 +7,15 @@ root = true
 charset = utf-8
 end_of_line = lf
 insert_final_newline = true
-
-[*.json]
-indent_style = space
-indent_size = 2
-
-[*.{js,jsx}]
 indent_style = tab
 tab_width = 3
 trim_trailing_whitespace = true
 insert_final_newline = true
 max_line_length = 80
+
+[*.json]
+indent_style = space
+indent_size = 2
 
 ; The default indent on package.json is 2 spaces, better to keep it so we can
 ; use `npm install --save` and other features that rewrites the package.json
