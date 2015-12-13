@@ -5,18 +5,17 @@ export const FECTH_CARD   = 'FECTH_CARD'
 export const RECEIVE_CARD = 'RECEIVE_CARD'
 export const REMOVE_CARD  = 'REMOVE_CARD'
 
-export const FETCH_STATUS = {
-	FETCHING : 'FETCHING',
-	FETHED   : 'FETCHED'
-}
-
-export function addCardOptimistic(url) {
-	return {
-		type: ADD_CARD,
-		fetchStatus: FETCH_STATUS.FETCHING,
-		url
+export const FETCH_STATUS =
+	{ FETCHING : 'FETCHING'
+	, FETHED   : 'FETCHED'
 	}
-}
+
+export const addCardOptimistic = (url) => (
+	{ type: ADD_CARD
+	, fetchStatus: FETCH_STATUS.FETCHING
+	, url
+	}
+)
 
 export function addCard(url) {
 	return function (dispatch) {
@@ -54,17 +53,15 @@ export function addCard(url) {
 	}
 }
 
-export function receiveCard(url, html) {
-	return {
-		type: RECEIVE_CARD,
-		fetchStatus: FETCH_STATUS.FETCHED,
-		url, html
+export const receiveCard = (url, html) => (
+	{ type: RECEIVE_CARD
+	, fetchStatus: FETCH_STATUS.FETCHED
+	, url, html
 	}
-}
+)
 
-export function removeCard(url) {
-	return {
-		type: REMOVE_CARD,
-		url
+export const removeCard = (url) => (
+	{ type: REMOVE_CARD
+	, url
 	}
-}
+)

@@ -10,14 +10,15 @@ const initialState = Immutable.Map({
 	cards: Immutable.List()
 })
 
-function addCardReducer(state, action) {
-	return state.update('cards', (cards) =>
-		cards.push(new Immutable.Map({
-			url: action.url,
-			fetchStatus: action.fetchStatus
-		}))
+const addCardReducer = (state, action) => (
+	state.update('cards', (cards) =>
+		cards.push(new Immutable.Map(
+			{ url: action.url
+			, fetchStatus: action.fetchStatus
+			}
+		))
 	)
-}
+)
 
 function receiveCardReducer(state, { url, html }) {
 	let cards = state.get('cards')

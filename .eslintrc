@@ -8,7 +8,7 @@
     "react"
   ],
   "rules": {
-    "comma-style": [1, "first"],
+    "comma-style": [1, "first", {exceptions: {ArrayExpression: true } }],
     "new-cap": 0,
     "strict": 0,
     "no-constant-condition": 2,
