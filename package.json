@@ -44,6 +44,7 @@
     "cors": "^2.7.1",
     "corser": "^2.0.0",
     "ejs": "^2.3.4",
+    "elm-webpack-loader": "^1.1.1",
     "eslint-plugin-react": "^3.11.3",
     "express": "^4.13.3",
     "immutable": "^3.7.5",

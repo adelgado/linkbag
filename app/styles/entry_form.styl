@@ -1,18 +1,17 @@
 @import './variables'
 
 .entry-form
+	input
+		margin-right $unit
+		width "calc(70% - %s)" % @margin-right
+		height $insertion-form-height
+
 	button
 		border none
 		background-color green
 		color white
 		height $insertion-form-height
-		width 10 * $unit
-
-	input
-		width 39 * $unit
-		height $insertion-form-height
-		padding-left $unit
-		margin-right $unit
+		width 30%
 
 	input,
 	button

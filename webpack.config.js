@@ -48,6 +48,11 @@ module.exports = {
 			{ test: /\.jsx$/,  loaders: ['react-hot-loader', 'babel-loader'], exclude: /node_modules/ },
 			{ test: /\.js$/,   loaders: ['babel-loader'], exclude: /node_modules/ },
 			{ test: /\.styl$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader!stylus-loader!stylint-loader') }
+			,
+				{ test: /\.elm$/
+				, loader: 'elm-webpack'
+				, exclude: [/elm-stuff/, /node_modules/]
+				}
 		]
 	},
 	resolve: {
