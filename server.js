@@ -2,7 +2,7 @@
 require("babel/register");
 
 var express = require('express'),
-	 cors    = require('cors'),
+	 cors = require('cors'),
 	 path = require('path'),
 	 app = express(),
 	 port = 3000,
