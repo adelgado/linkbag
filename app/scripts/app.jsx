@@ -12,4 +12,4 @@ ReactDOM.render(
 	document.querySelector('main')
 )
 
-Elm.embed(Elm.Main, document.querySelector('.panel'))
+Elm.embed(Elm.Main, document.querySelector('.panel-container'))
