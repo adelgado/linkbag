@@ -1,4 +1,15 @@
 .panel
 	margin ($unit / 2)
 	width $aside-width
-	background-color green
+	background-color white
+	padding-bottom ($unit / 2)
+
+	& > *:not(img)
+		margin-left ($unit / 2)
+		margin-right ($unit / 2)
+
+.panel__image
+	width $aside-width
+
+.panel__title
+	margin 0
